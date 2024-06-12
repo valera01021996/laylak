@@ -9,8 +9,15 @@ from keyboards.main_menu_keyboards import *
 from database.tools import DBTools, ProductTools
 
 
+async def register_user(full_name, chat_id):
+    DBTools().user_tools.register_user(full_name, chat_id)
+
+
 @dp.message_handler(commands=["start"], state="*")
 async def start_command(message: Message, state: FSMContext):
+    chat_id = message.chat.id
+    full_name = message.from_user.full_name
+    await register_user(full_name, chat_id)
     lang = (await state.get_data()).get('lang', 'uz')
     await message.answer(get_locale_text(lang, 'start'), reply_markup=get_language_keyboard())
 
@@ -59,3 +66,12 @@ async def show_products_menu(message: Message, state: FSMContext):
     await message.answer(get_locale_text(lang, "choose_product"), reply_markup=generate_products_menu(category_id, lang))
 
 
+@dp.message_handler(lambda message: message.text in ProductTools.PRODUCTS)
+async def show_detail_product(message: Message, state: FSMContext):
+    lang = (await state.get_data()).get('lang', 'en')
+    pk, name, price, image, description = DBTools().product_tools.get_product_detail(message.text, lang)
+    with open(image, mode="rb") as photo:
+        await bot.send_photo(message.chat.id, photo, caption=f"<b>{name}</b>\n\n"
+                                                             f"<i>{get_locale_text(lang, 'cost')}: {price}</i>\n"
+                                                             f"<i>{get_locale_text(lang, 'ingridients')}: {description}</i>", parse_mode="HTML",
+                             reply_markup=generate_detail_product_menu(name))

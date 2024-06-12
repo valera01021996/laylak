@@ -1,4 +1,5 @@
 from aiogram.types.reply_keyboard import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types.inline_keyboard import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.types import Message
 from test import get_locale_text
 from database.tools import DBTools
@@ -44,5 +45,19 @@ def generate_products_menu(category_id, lang):
     markup.row(
         KeyboardButton(text=get_locale_text(lang, 'main_menu')),
         KeyboardButton(text=get_locale_text(lang, 'back'))
+    )
+    return markup
+
+
+def generate_detail_product_menu(product_name, current_qty: int = 0):
+    markup = InlineKeyboardMarkup()
+    markup.row(
+        InlineKeyboardButton(text="-", callback_data=f"action_minus_{product_name}_{current_qty}"),
+        InlineKeyboardButton(text=str(current_qty),
+                             callback_data=f"action_current_{product_name}_{current_qty}"),
+        InlineKeyboardButton(text="+", callback_data=f"action_plus_{product_name}_{current_qty}"),
+    )
+    markup.row(
+        InlineKeyboardButton(text="🚀   Добавить в корзину", callback_data=f"add-cart_{product_name}_{current_qty}")
     )
     return markup

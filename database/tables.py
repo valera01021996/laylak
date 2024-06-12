@@ -32,6 +32,14 @@ def setup_database():
         )
         ''')
 
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        full_name VARCHAR(50) NOT NULL,
+        chat_id INTEGER NOT NULL UNIQUE
+    )
+    ''')
+
     conn.commit()
     conn.close()
 

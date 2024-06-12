@@ -8,5 +8,7 @@
   "choose_category": "Выберите категорию",
   "back": "Назад",
   "main_menu": "Главное меню",
-  "choose_product": "Выберите товар"
+  "choose_product": "Выберите товар",
+  "cost": "Цена",
+  "ingridients": "Ингридиенты"
 }
