@@ -13,3 +13,13 @@ class UserTools(BaseTools):
             self.connection.commit()
         finally:
             self.connection.close()
+
+
+    def get_user_id(self, chat_id):
+        self.cursor.execute("""SELECT id
+            FROM users
+            WHERE chat_id = ?
+        """, (chat_id, ))
+        user_id = self.cursor.fetchone()[0]
+        self.connection.close()
+        return user_id

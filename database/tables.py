@@ -5,7 +5,6 @@ def setup_database():
     conn = sqlite3.connect('../database.sqlite')
     cursor = conn.cursor()
 
-
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS categories (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -40,8 +39,39 @@ def setup_database():
     )
     ''')
 
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS carts(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER REFERENCES users(id),
+        total_price DECIMAL(9,2) DEFAULT 0,
+        total_amount INTEGER DEFAULT 0,
+        in_order BOOL DEFAULT 0
+    )
+    ''')
+
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS orders(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        cart_id INTEGER REFERENCES carts(id),
+        create_date VARCHAR(20) NOT NULL
+    )
+    ''')
+
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS cart_products(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        cart_id INTEGER REFERENCES carts(id),
+        product_id INTEGER REFERENCES products(id),
+        product_name VARCHAR(15) NOT NULL,
+        quantity INTEGER NOT NULL,
+        total_coast DECIMAL(9, 2) NOT NULL,   
+        UNIQUE(cart_id, product_id)     
+    )
+    ''')
+
     conn.commit()
     conn.close()
+
 
 if __name__ == "__main__":
     setup_database()

@@ -10,5 +10,21 @@
   "main_menu": "Main menu",
   "choose_product": "Choose product",
   "cost": "Cost",
-  "ingridients": "Ingridients"
+  "ingridients": "Ingridients",
+  "wrong_quantity_minus": "You cannot choose a negative number of products!",
+  "wrong_quantity_plus": "You exceed the maximum permissible limit!",
+  "current_quantity": "Current quantity",
+  "add_to_cart": "Add to cart",
+  "product_add": "Product added successfully!",
+  "product_quantity": "Product quantity has been changed!",
+  "your_cart": "Your cart",
+  "quantity": "Total",
+  "total_cost": "Total cost",
+  "checkout": "Checkout",
+  "clear_cart": "Clear cart",
+  "your_cart_empty": "Your basket is empty",
+  "currency": "sum",
+  "total": "Total",
+  "piece": "pieces",
+  "comment_delete_clear_product": "*«❌ Name »* - delete one position\n*\"\uD83D\uDD04 Clear\"* - complete emptying of the cart"
 }

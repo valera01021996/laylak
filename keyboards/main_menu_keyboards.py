@@ -49,7 +49,9 @@ def generate_products_menu(category_id, lang):
     return markup
 
 
-def generate_detail_product_menu(product_name, current_qty: int = 0):
+
+
+def generate_detail_product_menu(lang, product_name, current_qty: int = 0):
     markup = InlineKeyboardMarkup()
     markup.row(
         InlineKeyboardButton(text="-", callback_data=f"action_minus_{product_name}_{current_qty}"),
@@ -58,6 +60,7 @@ def generate_detail_product_menu(product_name, current_qty: int = 0):
         InlineKeyboardButton(text="+", callback_data=f"action_plus_{product_name}_{current_qty}"),
     )
     markup.row(
-        InlineKeyboardButton(text="🚀   Добавить в корзину", callback_data=f"add-cart_{product_name}_{current_qty}")
+        InlineKeyboardButton(text=get_locale_text(lang, 'add_to_cart'), callback_data=f"add-cart_{product_name}_{current_qty}")
+        # InlineKeyboardButton(text="text", callback_data=f"add-cart_{product_name}_{current_qty}")
     )
     return markup
