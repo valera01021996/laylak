@@ -13,7 +13,7 @@ def generate_cart_menu(cart_id: int, lang):
 
 
 def generate_cart_menu_reply_markup(chat_id, lang):
-    markup = ReplyKeyboardMarkup(row_width=2)
+    markup = ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
     user_id = DBTools().user_tools.get_user_id(chat_id)
     product_names = DBTools().cart_tools.get_cart_product(user_id)
 

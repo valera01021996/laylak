@@ -7,4 +7,7 @@ load_dotenv()
 storage = MemoryStorage()
 bot = Bot(os.getenv("BOT_TOKEN"))
 
+
+ADMINS = ["43031788"]
+
 dp = Dispatcher(bot, storage=storage)

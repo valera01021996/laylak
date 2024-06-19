@@ -57,7 +57,7 @@ class CartTools(BaseTools):
             return status_add
 
     def get_cart_products(self, cart_id):
-        self.cursor.execute("""SELECT product_id, product_name, quantity, total_coast
+        self.cursor.execute(f"""SELECT product_id, product_name, quantity, total_coast
             FROM cart_products
             WHERE cart_id=?
         """, (cart_id,))
@@ -88,5 +88,13 @@ class CartTools(BaseTools):
         self.cursor.execute("""DELETE FROM cart_products
             WHERE product_name = ? and cart_id = ?
         """, (product_name, cart_id))
+        self.connection.commit()
+        self.connection.close()
+
+
+    def delete_all_products_from_cart(self, cart_id: int):
+        self.cursor.execute("""DELETE FROM cart_products
+            WHERE cart_id = ?
+            """, (cart_id,))
         self.connection.commit()
         self.connection.close()

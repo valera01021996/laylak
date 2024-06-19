@@ -27,7 +27,7 @@ async def add_cart_product(call: CallbackQuery, state: FSMContext):
         await bot.answer_callback_query(call.id, get_locale_text(lang, "product_quantity"))
 
 
-@dp.message_handler(lambda message: message.text in ["Корзина", "Cart", "Savat"])
+@dp.message_handler(lambda message: message.text in ["🛒 Корзина", "🛒 Cart", "🛒 Savat"])
 async def show_cart(message: Message, state: FSMContext):
     lang = (await state.get_data()).get('lang', 'en')
     chat_id = message.chat.id
@@ -77,3 +77,13 @@ async def delete_product_from_cart(message: Message, state: FSMContext):
                                reply_markup=generate_cart_menu_reply_markup(chat_id, lang))
     else:
         await bot.send_message(chat_id, get_locale_text(lang, 'main_menu'), reply_markup=get_main_menu_keyboard(lang))
+
+
+@dp.message_handler(lambda message: message.text.startswith("🔄"))
+async def clear_cart(message: Message, state: FSMContext):
+    lang = (await state.get_data()).get('lang', 'en')
+    chat_id = message.chat.id
+    user_id = DBTools().user_tools.get_user_id(chat_id)
+    cart_id = DBTools().cart_tools.get_active_cart(user_id)[0]
+    DBTools().cart_tools.delete_all_products_from_cart(cart_id)
+    await bot.send_message(chat_id, "Ваша корзина очищена", reply_markup=get_main_menu_keyboard(lang))

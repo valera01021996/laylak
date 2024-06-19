@@ -8,9 +8,9 @@ from database.tools import DBTools
 def get_language_keyboard():
     markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     buttons = [
-        KeyboardButton(text="O'zbek"),
-        KeyboardButton(text="Русский"),
-        KeyboardButton(text="English"),
+        KeyboardButton(text="🇺🇿 O'zbek"),
+        KeyboardButton(text="🇷🇺 Русский"),
+        KeyboardButton(text="🇬🇧 English"),
     ]
     markup.add(*buttons)
     return markup

@@ -28,16 +28,16 @@ async def start_command(message: Message, state: FSMContext):
     await message.answer(get_locale_text(lang, 'start'), reply_markup=get_language_keyboard())
 
 
-@dp.message_handler(lambda message: message.text in ["English", "O'zbek", "Русский"])
+@dp.message_handler(lambda message: message.text in ["🇬🇧 English", "🇺🇿 O'zbek", "🇷🇺 Русский"])
 async def set_language(message: Message, state: FSMContext):
     lang = message.text.lower()
-    if lang == 'english':
+    if lang == '🇬🇧 english':
         await state.update_data(lang='en')
         lang = 'en'
-    elif lang == 'русский':
+    elif lang == '🇷🇺 русский':
         await state.update_data(lang='ru')
         lang = 'ru'
-    elif lang == 'o\'zbek':
+    elif lang == '🇺🇿 o\'zbek':
         await state.update_data(lang='uz')
         lang = 'uz'
     else:
@@ -47,19 +47,19 @@ async def set_language(message: Message, state: FSMContext):
     await message.answer(get_locale_text(lang, 'language_changed'), reply_markup=get_main_menu_keyboard(lang))
 
 
-@dp.message_handler(lambda message: message.text in ["Главное меню", "Main menu", "Glavnoe menyu"])
+@dp.message_handler(lambda message: message.text in ["🏠 Главное меню", "🏠 Main menu", "🏠 Glavnoe menyu"])
 async def main_menu(message: Message, state: FSMContext):
     lang = (await state.get_data()).get('lang', 'en')
     await message.answer(get_locale_text(lang, 'main_menu'), reply_markup=get_main_menu_keyboard(lang))
 
 
-@dp.message_handler(lambda message: message.text in ["Назад", "Back", "Orqaga"])
+@dp.message_handler(lambda message: message.text in ["◀ Назад", "◀ Back", "◀ Orqaga"])
 async def categories_menu(message: Message, state: FSMContext):
     lang = (await state.get_data()).get('lang', 'en')
     await message.answer(get_locale_text(lang, 'choose_category'), reply_markup=generate_categories_menu(lang))
 
 
-@dp.message_handler(lambda message: message.text in ["Start Order", "Начать заказ", "Boshlash"])
+@dp.message_handler(lambda message: message.text in ["✅ Start Order", "✅ Начать заказ", "✅ Boshlash"])
 async def start_order(message: Message, state: FSMContext):
     lang = (await state.get_data()).get('lang', 'en')
     await message.answer(get_locale_text(lang, 'choose_category'), reply_markup=generate_categories_menu(lang))
