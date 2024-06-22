@@ -8,6 +8,6 @@ storage = MemoryStorage()
 bot = Bot(os.getenv("BOT_TOKEN"))
 
 
-ADMINS = ["43031788"]
+ADMINS = ["43031788", "-4197023200"]
 
 dp = Dispatcher(bot, storage=storage)

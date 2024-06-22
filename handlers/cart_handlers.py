@@ -61,7 +61,7 @@ async def delete_product_from_cart(message: Message, state: FSMContext):
     cart_id = DBTools().cart_tools.get_active_cart(user_id)[0]
     product_name = message.text[5:]
     DBTools().cart_tools.delete_product_from_cart(product_name, cart_id)
-    cart_products = DBTools().cart_tools.get_cart_products(user_id)
+    cart_products = DBTools().cart_tools.get_cart_products(cart_id)
     cart_text = f"<b>{get_locale_text(lang, 'your_cart')}:</b>\n\n"
     total = int()
     i = 0

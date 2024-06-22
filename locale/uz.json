@@ -3,7 +3,7 @@
   "language_changed": "O'zbekchaga alishtirdi",
   "start_order": "✅ Boshlash",
   "settings": "Nastroykalar",
-  "leave_feedback": "Otzyv",
+  "leave_feedback": "✍   Otzyv",
   "cart": "\uD83D\uDED2 Savat",
   "choose_category": "Kategoriyani tanlang",
   "back": "◀ Orqaga",
@@ -38,6 +38,14 @@
   "order_address": "Sizning manzilingiz:",
   "order_phone_number": "Sizning telefon raqamingiz:",
   "confirm_message": "Buyurtmangiz qabul qilindi\uD83D\uDE0A Qo'ng'iroqingizni kuting",
-  "order_cancelled": "Buyurtma bekor qilindi!"
+  "order_cancelled": "Buyurtma bekor qilindi!",
+  "review_message": "Sharh qoldirish uchun quyidagilarni ko'rsatishingiz kerak:\n\nTo'liq ism\nTelefon raqami (+998********* formatida)\nSharh",
+  "full_name_letter": "To'liq ism faqat harflardan iborat bo'lishi kerak!",
+  "full_name_required": "To'liq ism talab qilinadi!",
+  "invalid_phone_number": "Yaroqsiz telefon raqami kiritildi!",
+  "thanks_feedback": "Fikr-mulohazangiz uchun tashakkur!",
+  "enter_full_name": "Toʻliq ismingizni kiriting",
+  "enter_phone_number": "Telefon raqamingizni kiriting:",
+  "leave_review": "Sharh qoldiring!"
 
 }

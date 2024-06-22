@@ -3,7 +3,7 @@
   "language_changed": "Язык изменен на русский.",
   "start_order": "✅ Начать заказ",
   "settings": "Настройки",
-  "leave_feedback": "Оставить отзыв",
+  "leave_feedback": "✍   Оставить отзыв",
   "cart": "\uD83D\uDED2 Корзина",
   "choose_category": "Выберите категорию",
   "back": "◀ Назад",
@@ -38,5 +38,13 @@
   "order_address": "Ваш адрес:",
   "order_phone_number": "Ваш номер телефона:",
   "confirm_message": "Ваш заказ принят\uD83D\uDE0A Ожидайте звонка",
-  "order_cancelled": "Заказ отменен !"
+  "order_cancelled": "Заказ отменен !",
+  "review_message": "Чтобы оставить отзыв,  вам необходимо указать:\n\nФИО\nНомер телефона(в формате +998*********)\nОтзыв",
+  "full_name_letter": "ФИО должно состоять только из букв !",
+  "full_name_required": "Необходимо указать ФИО !",
+  "invalid_phone_number": "Введен некорректный номер телефона !",
+  "thanks_feedback": "Спасибо за отзыв !",
+  "enter_full_name": "Введите ФИО",
+  "enter_phone_number": "Введите номер телефона:",
+  "leave_review": "Оставьте отзыв!"
 }

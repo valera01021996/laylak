@@ -3,7 +3,7 @@
   "language_changed": "Language changed to English.",
   "start_order": "✅ Start Order",
   "settings": "Settings",
-  "leave_feedback": "Leave Feedback",
+  "leave_feedback": "✍   Leave Feedback",
   "cart": "\uD83D\uDED2 Cart",
   "choose_category": "Choose category",
   "back": "◀ Back",
@@ -38,5 +38,13 @@
   "order_address": "Your address:",
   "order_phone_number": "Your phone number:",
   "confirm_message": "Your order has been accepted\uD83D\uDE0A Wait for your call",
-  "order_cancelled": "Order cancelled !"
+  "order_cancelled": "Order cancelled !",
+  "review_message": "To leave a review, you must indicate:\n\nFull name\nPhone number (in the format +998*********)\nReview",
+  "full_name_letter": "Full name must consist of letters only!",
+  "full_name_required": "Full name is required!",
+  "invalid_phone_number": "Invalid phone number entered!",
+  "thanks_feedback": "Thanks for your feedback!",
+  "enter_full_name": "Enter your full name",
+  "enter_phone_number": "Enter your phone number:",
+  "leave_review": "Leave a review!"
 }

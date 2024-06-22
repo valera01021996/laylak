@@ -69,6 +69,16 @@ def setup_database():
     )
     ''')
 
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS reviews(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER REFERENCES users(id),
+        full_name VARCHAR(50) NOT NULL,
+        phone_number VARCHAR(14) NOT NULL,
+        review TEXT NOT NULL   
+    )
+    """)
+
     conn.commit()
     conn.close()
 

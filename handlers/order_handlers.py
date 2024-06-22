@@ -68,7 +68,7 @@ async def success_confirm(message: Message, state: FSMContext):
     cart_id = DBTools().cart_tools.get_active_cart(user_id)[0]
     cart_products = DBTools().cart_tools.get_cart_products(cart_id)
     if message.text in ["Yes", "Да", "Ha"]:
-        await state.finish()
+        await state.reset_state(with_data=False)
         text_admins = await formatted_message_for_admins(data, full_name, cart_products, lang)
         await bot.send_message(chat_id, get_locale_text(lang, 'confirm_message'), reply_markup=get_main_menu_keyboard(lang))
         for admin_id in ADMINS:
