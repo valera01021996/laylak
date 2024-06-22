@@ -2,7 +2,7 @@
   "start": "Добро пожаловать! Выберите язык:",
   "language_changed": "Язык изменен на русский.",
   "start_order": "✅ Начать заказ",
-  "settings": "Настройки",
+  "settings": "⚙\uFE0F Настройки",
   "leave_feedback": "✍   Оставить отзыв",
   "cart": "\uD83D\uDED2 Корзина",
   "choose_category": "Выберите категорию",
@@ -46,5 +46,8 @@
   "thanks_feedback": "Спасибо за отзыв !",
   "enter_full_name": "Введите ФИО",
   "enter_phone_number": "Введите номер телефона:",
-  "leave_review": "Оставьте отзыв!"
+  "leave_review": "Оставьте отзыв!",
+  "select_action": "Выберите действие:",
+  "change_language": "Изменить язык",
+  "choose_language": "Выберите язык"
 }

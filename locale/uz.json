@@ -2,12 +2,12 @@
   "start": "Xush kelibsiz. Tilni tanlang:",
   "language_changed": "O'zbekchaga alishtirdi",
   "start_order": "✅ Boshlash",
-  "settings": "Nastroykalar",
-  "leave_feedback": "✍   Otzyv",
+  "settings": "⚙\uFE0F Sozlamalar",
+  "leave_feedback": "✍   Fikr",
   "cart": "\uD83D\uDED2 Savat",
   "choose_category": "Kategoriyani tanlang",
   "back": "◀ Orqaga",
-  "main_menu": "\uD83C\uDFE0 Glavnoe menyu",
+  "main_menu": "\uD83C\uDFE0 Bosh menyu",
   "choose_product": "Productni tanlang",
   "cost": "Narxi",
   "ingridients": "Ingridientlar",
@@ -46,6 +46,8 @@
   "thanks_feedback": "Fikr-mulohazangiz uchun tashakkur!",
   "enter_full_name": "Toʻliq ismingizni kiriting",
   "enter_phone_number": "Telefon raqamingizni kiriting:",
-  "leave_review": "Sharh qoldiring!"
-
+  "leave_review": "Sharh qoldiring!",
+  "select_action": "Harakatni tanlang",
+  "change_language": "Tilni o'zgartirish",
+  "choose_language": "Tilni tanlang"
 }

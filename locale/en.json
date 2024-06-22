@@ -2,7 +2,7 @@
   "start": "Welcome! Choose your language:",
   "language_changed": "Language changed to English.",
   "start_order": "✅ Start Order",
-  "settings": "Settings",
+  "settings": "⚙\uFE0F Settings",
   "leave_feedback": "✍   Leave Feedback",
   "cart": "\uD83D\uDED2 Cart",
   "choose_category": "Choose category",
@@ -46,5 +46,8 @@
   "thanks_feedback": "Thanks for your feedback!",
   "enter_full_name": "Enter your full name",
   "enter_phone_number": "Enter your phone number:",
-  "leave_review": "Leave a review!"
+  "leave_review": "Leave a review!",
+  "select_action": "Select an action:",
+  "change_language": "Change language",
+  "choose_language": "Choose language"
 }

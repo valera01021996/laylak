@@ -64,3 +64,11 @@ def generate_detail_product_menu(lang, product_name, current_qty: int = 0):
         # InlineKeyboardButton(text="text", callback_data=f"add-cart_{product_name}_{current_qty}")
     )
     return markup
+
+def generate_settings_menu(lang):
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    markup.row(
+        KeyboardButton(text=get_locale_text(lang, "change_language")),
+        KeyboardButton(text=get_locale_text(lang, 'main_menu'))
+    )
+    return markup

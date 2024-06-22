@@ -15,7 +15,7 @@ class Review(StatesGroup):
     review = State()
 
 
-@dp.message_handler(lambda message: message.text in ["✍   Оставить отзыв", "✍   Leave Feedback", "✍   Otzyv"])
+@dp.message_handler(lambda message: message.text in ["✍   Оставить отзыв", "✍   Leave Feedback", "✍   Fikr"])
 async def leave_review(message: Message, state: FSMContext):
     lang = (await state.get_data()).get('lang', 'en')
     chat_id = message.chat.id
