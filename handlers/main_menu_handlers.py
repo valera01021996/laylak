@@ -1,9 +1,6 @@
 from config import bot, dp
 from aiogram.types import Message, CallbackQuery
-from keyboards.main_menu_keyboards import get_language_keyboard, get_main_menu_keyboard
-from aiogram.dispatcher.filters import Command
 from aiogram.dispatcher.storage import FSMContext
-from aiogram.dispatcher.filters import Text
 from test import get_locale_text
 from keyboards.main_menu_keyboards import *
 from database.tools import DBTools, ProductTools
@@ -86,9 +83,7 @@ async def show_detail_product(message: Message, state: FSMContext):
     pk, name, price, image, description = DBTools().product_tools.get_product_detail(message.text, lang)
     with open(image, mode="rb") as photo:
         await bot.send_photo(message.chat.id, photo, caption=f"<b>{name}</b>\n\n"
-                                                             f"<i>{get_locale_text(lang, 'cost')}: {price}</i>\n"
-                                                             f"<i>{get_locale_text(lang, 'ingridients')}: {description}</i>",
-                             parse_mode="HTML",
+                                                             f"<i>{get_locale_text(lang, 'cost')}: {price}</i> {get_locale_text(lang, 'currency')}", parse_mode="HTML",
                              reply_markup=generate_detail_product_menu(lang, name))
 
 
